@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if g.user %}
+      <span class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Artist</th>
+              <th>Year</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for a in art %}
+              <tr>
+                <td>{{ a.name }}</td>
+                <td>{{ a.artist }}</td>
+                <td>{{ a.year }}</td>
+                <td>{{ a.price }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </span>
+      {% else %}
+        <h1>You must be logged in to view this page.</h1>
+      {% endif %}
+{% endblock %}

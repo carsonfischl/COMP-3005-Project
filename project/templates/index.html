@@ -1,0 +1,47 @@
+<!doctype html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+<div class="grid-container">
+  <div class="header-title">
+    <img src="{{url_for('static', filename='T.png')}}" id="corner-logo"/>
+  </div>
+  {% if g.user %}
+    <div class="grid-header">
+      <a class="button">Modern</a>
+      <a class="button">Pop</a>
+      <a class="button">Abstract</a>
+    </div>
+  {% else %}
+  <div class="grid-header"></div>
+  {% endif %}
+  <div class="header-right"></div>
+  <div class="grid-menu">
+    <nav id="navbar">
+      <h1><a href="{{ url_for('index') }}"></a></h1>
+        {% if g.user %}
+          <div class="item" id="menu-user">
+            <span id="menu-username">{{ g.user['username'] }}</span>
+          </div>
+          <div class="item" id="menu-button">
+            <a class="button" href="{{ url_for('auth.logout') }}">Logout</a>
+          </div>
+          <div class="item" id="menu-button">
+            <a class="button" href="{{ url_for('index.create') }}">New</a>
+          </div>
+        {% else %}
+          <div class="item" id="menu-button">
+            <a class="button" href="{{ url_for('auth.register') }}">Register</a>
+          </div>
+          <div class="item" id="menu-button">
+            <a class="button" href="{{ url_for('auth.login') }}">Login</a>
+          </div>
+        {% endif %}
+    </nav>
+  </div>
+  <div class="grid-main">
+    <section class="content">
+      {% block content %}{% endblock %}
+    </section>
+  </div>
+  <div class="content-right"></div>
+</div>

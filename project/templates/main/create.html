@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <form method="post">
+      <div class="item">
+        <label for="name">Name</label>
+        <input name="name" id="name" value="{{ request.form['name'] }}" required>
+      </div>
+    <div class="item">
+        <label for="Artist">Artist</label>
+        <input name="artist" id="artist" value="{{ request.form['artist'] }}" required>
+    </div>
+    <div class="item">
+        <label for="year">Year</label>
+        <input name="year" id="year" value="{{ request.form['year'] }}" required>
+    </div>
+    <div class="item">
+        <label for="price">Price</label>
+        <input name="price" id="price" value="{{ request.form['price'] }}" required>
+    </div>
+    <div class="item">
+        <label for="collection">Collection</label>
+        <select name="collection" id="collection">
+            {% for c in collections %}
+                <option value="{{ c.name }}">{{ c.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="item">
+        <input type="submit" value="Save" class="submit">
+    </div>
+  </form>
+{% endblock %}
