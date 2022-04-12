@@ -47,6 +47,8 @@ tbody tr:nth-child(odd) {
   grid-template-columns: min-content auto 10rem;
   grid-template-areas:
     "left header header-right"
+    "left artist header-right"
+    "left club header-right"
     "menu main right"
     "menu footer footer";
   grid-gap: 1rem;
@@ -62,6 +64,22 @@ tbody tr:nth-child(odd) {
 
 .grid-header {
   grid-area: header;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.grid-artist {
+  grid-area: artist;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.grid-club {
+  grid-area: club;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -180,4 +198,10 @@ a.button:visited {
 
 #menu-user {
   margin-bottom: 1rem;
+}
+
+.genre-title{
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }

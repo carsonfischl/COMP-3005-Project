@@ -6,19 +6,13 @@
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Artist</th>
-              <th>Year</th>
-              <th>Genre</th>
+              <th>Collector</th>
             </tr>
           </thead>
           <tbody>
             {% for a in art %}
               <tr>
                 <td>{{ a.name }}</td>
-                <td>{{ a.artist }}</td>
-                <td>{{ a.year }}</td>
-                <td>{{ a.collection }}</td>
               </tr>
             {% endfor %}
           </tbody>

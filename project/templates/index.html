@@ -6,10 +6,38 @@
     <img src="{{url_for('static', filename='T.png')}}" id="corner-logo"/>
   </div>
   {% if g.user %}
-    <div class="grid-header">
-      <a class="button">Modern</a>
-      <a class="button">Pop</a>
-      <a class="button">Abstract</a>
+    <div class="grid-header" method="post">
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.genre', id=1)}}">Modern</a>
+      </div>
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.genre', id=2)}}">Art Deco</a>
+      </div>
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.genre', id=3)}}">Impressionism</a>
+      </div>
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.genre', id=4)}}">Fauvism</a>
+      </div>
+    </div>
+    <div class="grid-artist">
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.artist', id=1)}}">Warhol</a>
+      </div>
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.artist', id=2)}}">Monet</a>
+      </div>
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.artist', id=3)}}">Rivera</a>
+      </div>
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.artist', id=4)}}">Munch</a>
+      </div>
+    </div>
+    <div class="grid-club">
+      <div class="item" id="menu-button">
+        <a class="button" href="{{ url_for('index.club', id=1)}}">Impressionist Club</a>
+      </div>
     </div>
   {% else %}
   <div class="grid-header"></div>
